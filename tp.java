@@ -7,6 +7,10 @@ public class tp {
     public static int Kilometros_recorridos(int KilometrajeInicial,int KilometrajeFinal){
         return KilometrajeFinal - KilometrajeInicial;
     }
+
+    public static double Consumo_100_Km(int KilometrosRecorridos,double LitrosCargados){
+         return (LitrosCargados / KilometrosRecorridos) * 100;
+    }
     public static void main(String[] args){
         String patente;
         int KilometrajeInicial, KilometrajeFinal;
@@ -33,6 +37,8 @@ public class tp {
         System.out.println("El camion con patente " + patente + " ha recorrido un total de " + KilometrosRecorridos + " kilometros");
 
         System.out.println("");
+
+        System.out.printf("Litros consumidos cada 100km: %.2f%n", Consumo_100_Km(KilometrosRecorridos, LitrosCargados));
 
         teclado.close();
     }
