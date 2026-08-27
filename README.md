@@ -54,17 +54,35 @@ Instrucciones para compilarlos y ejecutarlos:
 
 1 - Abrir la carpeta en la cual quieras tener los programas
 
-2 - Escribir en la terminal "git clone https://github.com/leonelahunchain40-debug/-tp1-consumo-flota"
+2 - Escribir en la terminal:
 
-3 - Entras en la sub-carpeta que se creó (cd "-tp1-consumo-flota")
+                             git clone https://github.com/leonelahunchain40-debug/-tp1-consumo-flota
 
-4 - Compilas con:
-                Javac tp.java
-                
-                Javac flota.java
+                             
+3 - Entras en la sub-carpeta que se creó:
+                                        
+                                        cd "-tp1-consumo-flota"
+
+
+4 - Compilas con el programa tp:
+
+                                Javac tp.java
+
+
 
 5 - Ejecutas con:
+                
                 Java tp
+
+
+
+6 - Compilas el programa flota:
+
+                                Javac flota
+
+
+
+7 - Ejecutas con:
 
                 Java flota
 
