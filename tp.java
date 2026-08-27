@@ -11,6 +11,10 @@ public class tp {
     public static double Consumo_100_Km(int KilometrosRecorridos,double LitrosCargados){
          return (LitrosCargados / KilometrosRecorridos) * 100;
     }
+
+    public static double Rendimiento(double LitrosCargados,int KilometrosRecorridos){
+        return KilometrosRecorridos / LitrosCargados;
+    }
     public static void main(String[] args){
         String patente;
         int KilometrajeInicial, KilometrajeFinal;
@@ -39,6 +43,8 @@ public class tp {
         System.out.println("");
 
         System.out.printf("Litros consumidos cada 100km: %.2f%n", Consumo_100_Km(KilometrosRecorridos, LitrosCargados));
+
+        System.out.printf("Rendimiento en kilometros por litro: %.2f%n", Rendimiento(LitrosCargados, KilometrosRecorridos));
 
         teclado.close();
     }
