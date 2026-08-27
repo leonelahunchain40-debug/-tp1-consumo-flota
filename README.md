@@ -56,17 +56,17 @@ Instrucciones para compilarlos y ejecutarlos:
 
 2 - Escribir en la terminal:
 
-                             git clone https://github.com/leonelahunchain40-debug/-tp1-consumo-flota
+                git clone https://github.com/leonelahunchain40-debug/-tp1-consumo-flota
 
                              
 3 - Entras en la sub-carpeta que se creó:
                                         
-                                        cd "-tp1-consumo-flota"
+                cd "-tp1-consumo-flota"
 
 
 4 - Compilas con el programa tp:
 
-                                Javac tp.java
+                Javac tp.java
 
 
 
@@ -78,7 +78,7 @@ Instrucciones para compilarlos y ejecutarlos:
 
 6 - Compilas el programa flota:
 
-                                Javac flota
+                Javac flota
 
 
 
