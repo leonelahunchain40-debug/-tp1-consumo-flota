@@ -19,6 +19,11 @@ public class tp {
     public static double CostoTotalCombustible(double LitrosCargados){
         return LitrosCargados * PRECIO_LITRO;
     }
+
+    public static double CostoKilometro(int KilometrosRecorridos,double CostoTotal){
+
+        return CostoTotal / KilometrosRecorridos;
+    }
     public static void main(String[] args){
         String patente;
         int KilometrajeInicial, KilometrajeFinal;
@@ -42,6 +47,8 @@ public class tp {
 
         int KilometrosRecorridos = Kilometros_recorridos(KilometrajeInicial, KilometrajeFinal);
 
+        double CostoTotal = CostoTotalCombustible(LitrosCargados);
+
         System.out.println("El camion con patente " + patente + " ha recorrido un total de " + KilometrosRecorridos + " kilometros");
 
         System.out.println("");
@@ -51,6 +58,8 @@ public class tp {
         System.out.printf("Rendimiento en kilometros por litro: %.2f%n", Rendimiento(LitrosCargados, KilometrosRecorridos));
 
         System.out.printf("Costo Total del combustible cargado: %.2f%n", CostoTotalCombustible(LitrosCargados));
+
+        System.out.printf("Costo por kilometro: %.2f%n", CostoKilometro(KilometrosRecorridos,CostoTotal));
 
         teclado.close();
     }
