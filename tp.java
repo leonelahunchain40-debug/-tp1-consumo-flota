@@ -24,6 +24,10 @@ public class tp {
 
         return CostoTotal / KilometrosRecorridos;
     }
+
+    public static double PorcentajeCarga(double LitrosCargados){
+        return (LitrosCargados / CAPACIDAD_TANQUE) * 100;
+    }
     public static void main(String[] args){
         String patente;
         int KilometrajeInicial, KilometrajeFinal;
@@ -60,6 +64,9 @@ public class tp {
         System.out.printf("Costo Total del combustible cargado: %.2f%n", CostoTotalCombustible(LitrosCargados));
 
         System.out.printf("Costo por kilometro: %.2f%n", CostoKilometro(KilometrosRecorridos,CostoTotal));
+
+        System.out.printf("Porcentaje de la capacidad del tanque que representa la carga: %.2f%%%n", PorcentajeCarga(LitrosCargados));
+
 
         teclado.close();
     }
