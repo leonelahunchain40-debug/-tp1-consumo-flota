@@ -64,6 +64,26 @@ public class flota {
         return (double) promedio / CANTIDAD_DATOS;
     }
 
+    public static void MayoryMenorKilometros(int[] camiones,int[] KilometrosRecorridos,String[] patente){
+        int mayor = KilometrosRecorridos[0];
+        int menor = KilometrosRecorridos[0];
+        int contador_mayor = 0;
+        int contador_menor = 0;
+
+        for(int i = 1;i < CANTIDAD_DATOS;i++){
+            if(mayor < KilometrosRecorridos[i]){
+                mayor = KilometrosRecorridos[i];
+                contador_mayor = i;
+            }
+            if(menor > KilometrosRecorridos[i]){
+                menor = KilometrosRecorridos[i];
+                contador_menor = i;
+            }
+        }
+        System.out.println("Patente Del Camion Que Mas Recorrió: " + patente[contador_mayor]);
+        System.out.println("Patente Del Camion Que Menos Recorrio: " + patente[contador_menor]);
+        }
+
     public static void main(String[] args){
         int[] camiones = new int[CANTIDAD_DATOS];
         String[] patente = new String[CANTIDAD_DATOS];
