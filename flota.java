@@ -37,6 +37,15 @@ public class flota {
         }
     }
 
+    public static int KilometrosFlota(int[] camiones,int[] KilometrosRecorridos){
+        int suma = 0;
+        for(int i = 0;i < CANTIDAD_DATOS;i++){
+            suma += KilometrosRecorridos[i];
+        }
+
+        return suma;
+    }
+
     public static void main(String[] args){
         int[] camiones = new int[CANTIDAD_DATOS];
         String[] patente = new String[CANTIDAD_DATOS];
