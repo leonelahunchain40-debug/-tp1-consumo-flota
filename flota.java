@@ -102,6 +102,24 @@ public class flota {
             return suma / CANTIDAD_DATOS;
         }
 
+        public static void ClasificacionConsumo(int[] KilometrosRecorridos, double[] LitrosConsumidos){
+            int contador_eficiente = 0;
+            int contador_normal = 0;
+            int contador_excesivo = 0;
+            for(int i = 0;i < CANTIDAD_DATOS;i++){
+                if(ConsumoCada100km(LitrosConsumidos, KilometrosRecorridos)[i] < 8){
+                    System.out.println("EFICIENTE");
+                    contador_eficiente++;
+                }else if(ConsumoCada100km(LitrosConsumidos, KilometrosRecorridos)[i] < 12 && ConsumoCada100km(LitrosConsumidos, KilometrosRecorridos)[i] > 8){
+                    System.out.println("NORMAL");
+                    contador_normal++;
+                }else if(ConsumoCada100km(LitrosConsumidos, KilometrosRecorridos)[i] > 12){
+                    System.out.println("EXCESIVO");
+                    contador_excesivo++;
+                }
+            }
+        }
+
     public static void main(String[] args){
         int[] camiones = new int[CANTIDAD_DATOS];
         String[] patente = new String[CANTIDAD_DATOS];
