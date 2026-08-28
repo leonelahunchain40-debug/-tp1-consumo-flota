@@ -84,6 +84,14 @@ public class flota {
         System.out.println("Patente Del Camion Que Menos Recorrio: " + patente[contador_menor]);
         }
 
+    public static double[] ConsumoCada100km(double[] LitrosCargados,int[] KilometrosRecorridos){
+        double[] resultado = new double[CANTIDAD_DATOS];
+        for(int i = 0;i < CANTIDAD_DATOS;i++){
+            resultado[i] = (LitrosCargados[i] / KilometrosRecorridos[i]) * 100;
+        }
+        return resultado;
+    }
+
     public static void main(String[] args){
         int[] camiones = new int[CANTIDAD_DATOS];
         String[] patente = new String[CANTIDAD_DATOS];
