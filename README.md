@@ -92,4 +92,4 @@ Instrucciones para compilarlos y ejecutarlos:
 
 2- Haber trabajado la parte c en una rama diferente (parte-c) me sirvió para poder comparar el codigo de la rama con el del main y elegir que codigo preferiria, ademas de que si llegaba a terminar teniendo un error en la parte-c podia volver al codigo del main y utilizar ese otra vez.
 
-3-
+3- Decidi cambiar el siguiente "(parte-c) Visualizacion mas bonita y decorada" este mismo no me gusta debido a que no aporta mucho y podria mejorar el nombre del mismo commit, nombre del commit cambiado a actualmente: "(parte-c) Incorporacion de la parte visual y cambios en algunas partes visuales mal puestas".
