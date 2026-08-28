@@ -29,12 +29,28 @@ public class flota {
     }
 
     public static void MostrarInformacion(int[] camiones,String[] patente,int[] KilometrosRecorridos,double[] LitrosConsumidos){
+        System.out.println("=======================================================");
+        System.out.printf(" %35s %n%n", "FLOTA DE CAMIONES");
+        System.out.print("=======================================================");
+        
         for(int i = 0;i < CANTIDAD_DATOS;i++){
-            System.out.println("Datos del camion " + (i+1) + " : ");
-            System.out.println("Patente: " + patente[i]);
-            System.out.println("Kilometros Recorridos: " + KilometrosRecorridos[i]);
-            System.out.println("Litros Consumidos: " + LitrosConsumidos[i]);
+            System.out.printf("%n|%34s  %d                 |%n","Datos del camion", (i+1) );
+            System.out.println("-------------------------------------------------------");
+            System.out.printf("|Patente              : %30s|%n", patente[i]);
+            System.out.println("-------------------------------------------------------");
+            System.out.printf("|Kilometros Recorridos: %30d|%n", KilometrosRecorridos[i]);
+            System.out.println("-------------------------------------------------------");
+            System.out.printf("|Litros Consumidos    : %30.2f|%n", LitrosConsumidos[i]);
+            System.out.print("=======================================================");
         }
+            System.out.printf("%n Kilometros Recorridos por la flota: %30d|%n", KilometrosFlota(camiones, KilometrosRecorridos));
+            System.out.println("=======================================================");
+            System.out.printf("Litros Consumidos Por La Flota: %30.2f|%n", LitrosFlota(camiones, LitrosConsumidos));
+            System.out.println("=======================================================");
+            System.out.printf("Promedio De Kilometros Por Camion: %30.2f|%n", PromedioKilometros(camiones, KilometrosRecorridos));
+            System.out.println("=======================================================");
+            System.out.printf("Promedio De Litros Consumidos Cada 100km: %30.2f|%n", ConsumoPromedioLitro(LitrosConsumidos, KilometrosRecorridos));
+            System.out.println("=======================================================");
     }
 
     public static int KilometrosFlota(int[] camiones,int[] KilometrosRecorridos){
@@ -80,8 +96,10 @@ public class flota {
                 contador_menor = i;
             }
         }
-        System.out.println("Patente Del Camion Que Mas Recorrió: " + patente[contador_mayor]);
-        System.out.println("Patente Del Camion Que Menos Recorrio: " + patente[contador_menor]);
+        System.out.printf("|Patente Del Camion Que Mas Recorrió:         %s|%n", patente[contador_mayor]);
+        System.out.println("=======================================================");
+        System.out.printf("|Patente Del Camion Que Menos Recorrio:      %s|%n", patente[contador_menor]);
+        System.out.println("=======================================================");
         }
 
     public static double[] ConsumoCada100km(double[] LitrosCargados,int[] KilometrosRecorridos){
@@ -102,23 +120,29 @@ public class flota {
             return suma / CANTIDAD_DATOS;
         }
 
-        public static void ClasificacionConsumo(int[] KilometrosRecorridos, double[] LitrosConsumidos){
-            int contador_eficiente = 0;
-            int contador_normal = 0;
-            int contador_excesivo = 0;
-            for(int i = 0;i < CANTIDAD_DATOS;i++){
-                if(ConsumoCada100km(LitrosConsumidos, KilometrosRecorridos)[i] < 8){
-                    System.out.println("EFICIENTE");
-                    contador_eficiente++;
-                }else if(ConsumoCada100km(LitrosConsumidos, KilometrosRecorridos)[i] < 12 && ConsumoCada100km(LitrosConsumidos, KilometrosRecorridos)[i] > 8){
-                    System.out.println("NORMAL");
-                    contador_normal++;
-                }else if(ConsumoCada100km(LitrosConsumidos, KilometrosRecorridos)[i] > 12){
-                    System.out.println("EXCESIVO");
-                    contador_excesivo++;
-                }
+    public static void ClasificacionConsumo(int[] KilometrosRecorridos, double[] LitrosConsumidos){
+        int contador_eficiente = 0;
+        int contador_normal = 0;
+        int contador_excesivo = 0;
+        System.out.println("=======================================================");
+        System.out.printf("%35s %n%n", "TIPO DE CONSUMO");
+        System.out.println("=======================================================");
+        for(int i = 0;i < CANTIDAD_DATOS;i++){
+            if(ConsumoCada100km(LitrosConsumidos, KilometrosRecorridos)[i] < 8){
+                System.out.printf("|%35s                    |%n","EFICIENTE");
+                System.out.println("=======================================================");
+                contador_eficiente++;
+            }else if(ConsumoCada100km(LitrosConsumidos, KilometrosRecorridos)[i] < 12 && ConsumoCada100km(LitrosConsumidos, KilometrosRecorridos)[i] > 8){
+                System.out.printf("|%35s                    |%n","NORMAL");
+                System.out.println("=======================================================");
+                contador_normal++;
+            }else if(ConsumoCada100km(LitrosConsumidos, KilometrosRecorridos)[i] > 12){
+                System.out.printf("|%35s                    |%n","EXCESIVO");
+                System.out.println("=======================================================");
+                contador_excesivo++;
             }
         }
+    }
 
     public static void main(String[] args){
         int[] camiones = new int[CANTIDAD_DATOS];
@@ -132,6 +156,8 @@ public class flota {
 
         MostrarInformacion(camiones, patente, KilometrosRecorridos, LitrosConsumidos);
 
-        System.out.println("Kilometros Recorridos por la flota: " + KilometrosFlota(camiones, KilometrosRecorridos));
+        MayoryMenorKilometros(camiones, KilometrosRecorridos, patente);
+
+        ClasificacionConsumo(KilometrosRecorridos, LitrosConsumidos);
     }
 }
