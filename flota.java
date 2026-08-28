@@ -28,6 +28,15 @@ public class flota {
         return camiones;
     }
 
+    public static void MostrarInformacion(int[] camiones,String[] patente,int[] KilometrosRecorridos,double[] LitrosConsumidos){
+        for(int i = 0;i < CANTIDAD_DATOS;i++){
+            System.out.println("Datos del camion " + (i+1) + " : ");
+            System.out.println("Patente: " + patente[i]);
+            System.out.println("Kilometros Recorridos: " + KilometrosRecorridos[i]);
+            System.out.println("Litros Consumidos: " + LitrosConsumidos[i]);
+        }
+    }
+
     public static void main(String[] args){
         int[] camiones = new int[CANTIDAD_DATOS];
         String[] patente = new String[CANTIDAD_DATOS];
@@ -37,5 +46,8 @@ public class flota {
         Scanner teclado = new Scanner(System.in);
 
         CargarInformacionFlota(camiones, patente, KilometrosRecorridos, LitrosConsumidos, teclado);
+
+        MostrarInformacion(camiones, patente, KilometrosRecorridos, LitrosConsumidos);
+
     }
 }
