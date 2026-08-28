@@ -46,6 +46,15 @@ public class flota {
         return suma;
     }
 
+    public static double LitrosFlota(int[] camiones,double[] LitrosConsumidos){
+        double suma = 0;
+        for(int i = 0;i < CANTIDAD_DATOS;i++){
+            suma += LitrosConsumidos[i];
+        }
+
+        return suma;
+    }
+
     public static void main(String[] args){
         int[] camiones = new int[CANTIDAD_DATOS];
         String[] patente = new String[CANTIDAD_DATOS];
@@ -55,5 +64,9 @@ public class flota {
         Scanner teclado = new Scanner(System.in);
 
         CargarInformacionFlota(camiones, patente, KilometrosRecorridos, LitrosConsumidos, teclado);
+
+        MostrarInformacion(camiones, patente, KilometrosRecorridos, LitrosConsumidos);
+
+        System.out.println("Kilometros Recorridos por la flota: " + KilometrosFlota(camiones, KilometrosRecorridos));
     }
 }
