@@ -92,6 +92,16 @@ public class flota {
         return resultado;
     }
 
+    public static double ConsumoPromedioLitro(double[] LitrosCargados,int[] KilometrosRecorridos){
+            double suma = 0;
+
+            for(int i = 0;i < CANTIDAD_DATOS;i++){
+                suma+= ConsumoCada100km(LitrosCargados, KilometrosRecorridos)[i];
+            }
+
+            return suma / CANTIDAD_DATOS;
+        }
+
     public static void main(String[] args){
         int[] camiones = new int[CANTIDAD_DATOS];
         String[] patente = new String[CANTIDAD_DATOS];
