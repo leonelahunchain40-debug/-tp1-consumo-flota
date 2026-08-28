@@ -55,6 +55,15 @@ public class flota {
         return suma;
     }
 
+    public static double PromedioKilometros(int[] camiones,int[] KilometrosRecorridos){
+        double promedio = 0;
+        for(int i = 0;i < CANTIDAD_DATOS;i++){
+            promedio += KilometrosRecorridos[i];
+        }
+
+        return (double) promedio / CANTIDAD_DATOS;
+    }
+
     public static void main(String[] args){
         int[] camiones = new int[CANTIDAD_DATOS];
         String[] patente = new String[CANTIDAD_DATOS];
