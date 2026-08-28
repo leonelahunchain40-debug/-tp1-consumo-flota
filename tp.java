@@ -53,20 +53,45 @@ public class tp {
 
         double CostoTotal = CostoTotalCombustible(LitrosCargados);
 
-        System.out.println("El camion con patente " + patente + " ha recorrido un total de " + KilometrosRecorridos + " kilometros");
+        System.out.println("======================================================================");
+        
+        System.out.printf("|Patente              |  %12s                                 |%n", patente);
+        System.out.println("----------------------------------------");
+        System.out.printf("|Kilometraje Inicial  |  %12d                                 |%n", KilometrajeInicial);
+        System.out.println("----------------------------------------");
+        System.out.printf("|Kilometraje Final    |  %12d                                 |%n", KilometrajeFinal);
+        System.out.println("----------------------------------------");
+        System.out.printf("|Litros Cargados      |  %12.2f                                 |%n", LitrosCargados);
 
-        System.out.println("");
+        System.out.println("======================================================================");
 
-        System.out.printf("Litros consumidos cada 100km: %.2f%n", Consumo_100_Km(KilometrosRecorridos, LitrosCargados));
+        System.out.printf("|Kilometros Recorridos|  %12d                                 |%n", KilometrosRecorridos);
+        
+        System.out.println("======================================================================");
 
-        System.out.printf("Rendimiento en kilometros por litro: %.2f%n", Rendimiento(LitrosCargados, KilometrosRecorridos));
+        System.out.printf("Litros consumidos cada 100km| %.2f                                   |%n", Consumo_100_Km(KilometrosRecorridos, LitrosCargados));
 
-        System.out.printf("Costo Total del combustible cargado: %.2f%n", CostoTotalCombustible(LitrosCargados));
+        System.out.println("======================================================================");
 
-        System.out.printf("Costo por kilometro: %.2f%n", CostoKilometro(KilometrosRecorridos,CostoTotal));
+        System.out.printf("Rendimiento en kilometros por litro: %.2f                           |%n", Rendimiento(LitrosCargados, KilometrosRecorridos));
 
-        System.out.printf("Porcentaje de la capacidad del tanque que representa la carga: %.2f%%%n", PorcentajeCarga(LitrosCargados));
+        System.out.println("======================================================================");
 
+        System.out.printf("Costo Total del combustible cargado: %.2f                           |%n", CostoTotalCombustible(LitrosCargados));
+
+        System.out.println("======================================================================");
+
+        System.out.printf("Costo por kilometro: %.2f                                           |%n", CostoKilometro(KilometrosRecorridos,CostoTotal));
+
+        System.out.println("======================================================================");
+
+        System.out.printf("Porcentaje de la capacidad del tanque que representa la carga: %.2f%%|%n", PorcentajeCarga(LitrosCargados));
+
+        System.out.println("======================================================================");
+
+        System.out.println("El camion con patente " + patente + " ha recorrido un total de " + KilometrosRecorridos + " kilometros|");
+
+        System.out.println("======================================================================");
 
         teclado.close();
     }
